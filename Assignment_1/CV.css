@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.cv-container{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    width: 100%;
+    padding-top: 0;
+    margin-top: 0;
+   
+}
+
+.image{
+    width: 17%;
+    height: 15%;
+    border-radius: 50%;
+    float: left;
+
+    margin-left: 370px;
+
+    
+}
+.upper section{
+   
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 40px;
+}
+.upper{
+    
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    
+    
+}
+.mail{
+    padding: 9px;
+    color: black;
+    font-weight: 300;
+    align-items:center;
+}
+
+h1{
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    font-weight: 700;
+    color:darkslategrey;
+}
+h3{
+    font-weight: 500;
+    margin: 15px;
+    align-items:start;
+   
+}
+a{
+    text-decoration: none;
+    font-weight: 300;
+    padding: 5px;
+    margin: 15px;
+}
+.edu{
+    font-weight: bold;
+    font-size: large;
+}
+.left{
+    float: left;
+    margin-left: 20%;
+
+    
+    
+}
+.leftSection{
+    border-right: 2px solid gray;
+    margin-left: 20%;
+    
+}
+.rightSection{
+    margin-left: 630px;
+    width: 80%;
+}
+.para{
+    color: black;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 1px ;
+    
+}
+.skills{
+    font-size: 18px;
+    color: black;
+}
+.projects{
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
