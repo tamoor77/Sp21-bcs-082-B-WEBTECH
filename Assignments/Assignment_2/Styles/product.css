@@ -1,0 +1,150 @@
+/* New Arrivals Section */
+.new-arrivals {
+    text-align: center;
+    padding: 50px 0;
+    background: #f9f9f9;
+}
+
+.new-arrivals h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Scrollable Arrivals Container */
+.arrivals-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.arrivals-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.arrivals-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+/* Individual Item Styling */
+.arrival-item {
+    background: white;
+    padding: 15px;
+    width: 250px; /* Increased width */
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.arrival-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.arrival-item h3 {
+    font-size: 16px; /* Increased font size */
+    margin: 10px 0 5px;
+}
+
+.arrival-item p {
+    font-size: 14px; /* Increased font size */
+    color: #555;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px; /* Increased font size */
+    display: block;
+    margin: 5px 0;
+}
+
+/* Color Options */
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.color {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.selected {
+    border: 2px solid #000;
+}
+
+/* Add to Cart Button */
+.cart-btn {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 35px; /* Increased size */
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-btn i {
+    font-size: 16px;
+    color: black;
+}
+
+.cart-btn:hover {
+    background: black;
+}
+
+.cart-btn:hover i {
+    color: white;
+}
+
+/* Just Landed Block */
+.explore-more {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+}
+
+.explore-more i {
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+/* View Collection Button */
+.view-collection {
+    background: black;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Increased button size */
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-collection:hover {
+    background: gray;
+}
