@@ -1,0 +1,136 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Top Bar */
+.top-bar {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Hero Section (with Navbar inside) */
+.hero {
+    background: url('./quality_80.webp') center/cover no-repeat;
+    height: 100vh;
+    position: relative;
+    color: white;
+}
+
+/* Dark overlay for better text visibility */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* Navbar inside Hero */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2; /* Above overlay */
+}
+
+/* Logo */
+.logo img {
+    width: 120px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: lightgray;
+}
+
+/* Icons */
+.icons a {
+    color: white;
+    margin-left: 15px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.icons a:hover {
+    color: lightgray;
+}
+
+/* Hero Content */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 5px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: lightgray;
+}
