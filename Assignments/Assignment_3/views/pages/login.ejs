@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belstaff - Login</title>
+  <link rel="stylesheet" href="/login.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-message">
+      SUBSCRIBE TO OUR EMAILS FOR EXCLUSIVE UPDATES <a href="#">LEARN MORE</a>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <div class="nav-left">
+      <img src="https://www.belstaff.com/on/demandware.static/-/Library-Sites-BelstaffSharedLibrary/default/dw4a93cefd/images/logo.svg" alt="Belstaff Logo" class="logo" />
+    </div>
+    <div class="nav-links">
+      <a href="#">NEW ARRIVALS</a>
+      <a href="#">MEN</a>
+      <a href="#">WOMEN</a>
+      <a href="#">MOTORCYCLE</a>
+    </div>
+    <div class="nav-icons">
+      <span>EN</span>
+      <span>🔍</span>
+      <span>👤</span>
+      <span>🛒</span>
+    </div>
+  </nav>
+
+  <main class="login-container">
+    <h1>LOG-IN</h1>
+    <form class="login-form" method="POST" action="/login">
+  <input type="email" name="email" placeholder="Email" required />
+
+  <div class="password-wrapper">
+    <input type="password" name="password" placeholder="Password" required />
+    <span class="eye-icon">👁️</span>
+  </div>
+
+  <a href="#" class="forgot-password">Forgot your password?</a>
+
+  <button type="submit">LOGIN</button>
+
+  <a href="/register" class="create-account">Create Account</a>
+</form>
+
+  </main>
+</body>
+</html>
