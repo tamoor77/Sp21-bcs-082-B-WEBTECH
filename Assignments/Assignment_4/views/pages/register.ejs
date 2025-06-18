@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belstaff - Register</title>
+  <link rel="stylesheet" href="/css/register.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-message">
+      SUBSCRIBE TO OUR EMAILS FOR EXCLUSIVE UPDATES <a href="#">LEARN MORE</a>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <div class="nav-left">
+      <img src="https://www.belstaff.com/on/demandware.static/-/Library-Sites-BelstaffSharedLibrary/default/dw4a93cefd/images/logo.svg" alt="Belstaff Logo" class="logo" />
+    </div>
+    <div class="nav-links">
+      <a href="#">NEW ARRIVALS</a>
+      <a href="#">MEN</a>
+      <a href="#">WOMEN</a>
+      <a href="#">MOTORCYCLE</a>
+    </div>
+    <div class="nav-icons">
+      <span>EN</span>
+      <span>🔍</span>
+      <span>👤</span>
+      <span>🛒</span>
+    </div>
+  </nav>
+
+  <main class="register-container">
+    <h1>REGISTER</h1>
+    <!-- Add inside your <form class="register-form"> -->
+<form class="register-form" action="/login" method="get">
+  <input type="text" placeholder="First Name" required />
+  <input type="text" placeholder="Last Name" required />
+  <input type="email" placeholder="Email" required />
+
+  <div class="password-wrapper">
+    <input type="password" placeholder="Password" required id="password"/>
+    <span class="eye-icon" onclick="togglePassword('password')">👁️</span>
+  </div>
+
+  <div class="password-wrapper">
+    <input type="password" placeholder="Confirm password" required id="confirm-password"/>
+    <span class="eye-icon" onclick="togglePassword('confirm-password')">👁️</span>
+  </div>
+
+  <label class="checkbox-container">
+    <input type="checkbox" />
+    <span>Sign Up Now</span>
+  </label>
+
+  <!-- Sign Up Button -->
+  <button type="submit" class="signup-btn">Sign Up</button>
+
+  <!-- Login Button -->
+  <p class="login-redirect">
+    Already have an account?
+    <a href="/login" class="login-link">Login</a>
+  </p>
+</form>
+
+  </main>
+
+  <script>
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      if (input.type === "password") {
+        input.type = "text";
+      } else {
+        input.type = "password";
+      }
+    }
+  </script>
+</body>
+</html>

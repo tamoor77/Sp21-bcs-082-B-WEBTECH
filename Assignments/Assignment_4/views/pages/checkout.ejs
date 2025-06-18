@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/checkout.css"/>
+</head>
+<body>
+  <div class="checkout-container">
+    <div class="checkout-left">
+      <img src="/assets/images/logo-dark.svg" alt="Belstaff Logo" class="logo" />
+
+      <div class="express-checkout">
+        <p>Express checkout</p>
+        <div class="buttons">
+          <button class="shop-pay">Shop Pay</button>
+          <button class="paypal">PayPal</button>
+          <button class="gpay">Google Pay</button>
+        </div>
+      </div>
+
+      <form class="checkout-form">
+        <div class="contact">
+          <label for="email">Contact</label>
+          <input type="email" id="email" placeholder="Email" />
+          <label><input type="checkbox" checked /> Sign up to receive Belstaff emails</label>
+        </div>
+
+        <div class="delivery">
+          <label for="country">Country/Region</label>
+          <select id="country">
+            <option selected>Switzerland</option>
+            <option>USA</option>
+            <option>UK</option>
+          </select>
+
+          <div class="name-fields">
+            <input type="text" placeholder="First name" />
+            <input type="text" placeholder="Last name" />
+          </div>
+
+          <input type="text" placeholder="Address" />
+          <input type="text" placeholder="Postal code" />
+          <input type="text" placeholder="City" />
+          <input type="text" placeholder="Phone" />
+        </div>
+
+        <div class="shipping-method">
+          <p>Enter your shipping address to view available shipping methods.</p>
+        </div>
+
+        <div class="payment">
+          <h3>Payment</h3>
+          <p>All transactions are secure and encrypted.</p>
+
+          <div class="credit-card">
+            <p>Credit card</p>
+            <div class="icons">[Visa] [MasterCard] [Amex]</div>
+
+            <input type="text" placeholder="Card number" />
+            <div class="card-details">
+              <input type="text" placeholder="Expiration date (MM / YY)" />
+              <input type="text" placeholder="Security code" />
+            </div>
+            <input type="text" placeholder="Name on card" />
+            <label><input type="checkbox" checked /> Use shipping address as billing address</label>
+
+            <div class="paypal-option">
+              <label><input type="radio" name="payment-method" /> PayPal</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="remember-me">
+          <h4>Remember me</h4>
+          <label>
+            <input type="checkbox" checked />
+            Save my information for a faster checkout with a Shop account
+          </label>
+          <input type="tel" placeholder="Mobile phone number" value="+41" />
+          <p class="secure-note">🔒 Secure and encrypted</p>
+        </div>
+
+        <button class="review-order-btn">Review order</button>
+
+        <div class="legal-text">
+          <p>
+            Your info will be saved to a Shop account. By continuing, you agree to Shop’s
+            <a href="#">Terms of Service</a> and acknowledge the <a href="#">Privacy Policy</a>.
+          </p>
+        </div>
+      </form>
+
+      <footer class="footer">
+        <p>All rights reserved Belstaff International</p>
+      </footer>
+    </div>
+
+    <div class="checkout-right">
+      <div class="delivery-warning">
+        <p>Deliveries may take slightly longer than usual for a short period due to warehouse improvements.</p>
+      </div>
+
+      <% let total = 0; %>
+      <% cart.forEach(item => { 
+           const itemTotal = item.price * item.quantity;
+           total += itemTotal;
+      %>
+        <div class="item-summary">
+          <img src="<%= item.image %>" alt="<%= item.name %>" />
+          <div class="details">
+            <p><strong><%= item.name %></strong></p>
+            <p><%= item.description || 'Standard Size / Color' %></p>
+            <p>Quantity: <%= item.quantity %></p>
+          </div>
+          <span>$<%= itemTotal.toFixed(2) %></span>
+        </div>
+      <% }) %>
+
+      <div class="discount">
+        <input type="text" placeholder="Discount code" />
+        <button>Apply</button>
+      </div>
+
+      <div class="summary">
+        <div class="line">
+          <span>Subtotal</span>
+          <span>$<%= total.toFixed(2) %></span>
+        </div>
+        <div class="line">
+          <span>Shipping</span>
+          <span>Enter shipping address</span>
+        </div>
+        <div class="line total">
+          <span>Total</span>
+          <span><strong>USD $<%= total.toFixed(2) %></strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
