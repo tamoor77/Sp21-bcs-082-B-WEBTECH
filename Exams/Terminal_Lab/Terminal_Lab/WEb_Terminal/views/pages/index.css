@@ -1,0 +1,488 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Top Bar */
+.top-bar {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Hero Section (with Navbar inside) */
+.hero {
+    background: url('quality_80.webp') center/cover no-repeat;
+    height: 100vh;
+    position: relative;
+    color: white;
+}
+
+/* Dark overlay for better text visibility 
+*/
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* Navbar inside Hero */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2; /* Above overlay */
+}
+
+/* Logo */
+.logo img {
+    width: 120px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: lightgray;
+}
+
+/* Icons */
+.icons a {
+    color: white;
+    margin-left: 15px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.icons a:hover {
+    color: lightgray;
+}
+
+/* Hero Content */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 5px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: lightgray;
+}
+
+
+/* New Arrivals Section */
+.new-arrivals {
+    text-align: center;
+    padding: 50px 0;
+    background: #f9f9f9;
+}
+
+.new-arrivals h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Scrollable Arrivals Container */
+.arrivals-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.arrivals-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.arrivals-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+/* Individual Item Styling */
+.arrival-item {
+    background: white;
+    padding: 15px;
+    width: 250px; /* Increased width */
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.arrival-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.arrival-item h3 {
+    font-size: 16px; /* Increased font size */
+    margin: 10px 0 5px;
+}
+
+.arrival-item p {
+    font-size: 14px; /* Increased font size */
+    color: #555;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px; /* Increased font size */
+    display: block;
+    margin: 5px 0;
+}
+
+/* Color Options */
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.color {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.selected {
+    border: 2px solid #000;
+}
+
+/* Add to Cart Button */
+.cart-btn {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 35px; /* Increased size */
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-btn i {
+    font-size: 16px;
+    color: black;
+}
+
+.cart-btn:hover {
+    background: black;
+}
+
+.cart-btn:hover i {
+    color: white;
+}
+
+.motorcycle-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/quality_800.webp'); /* Background Image */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Background stays behind */
+}
+
+.content {
+    position: absolute;
+    top: 30%; /* Adjusted for better visibility */
+    text-align: center;
+    color: white;
+    z-index: 2; /* Ensures text stays in front */
+    background: rgba(0, 0, 0, 0.3); /* Optional: Add slight background to improve readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+.btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.foreground-images {
+    position: absolute;
+    bottom: -50%; 
+    display: flex;
+    gap: 20px;
+    z-index: 1; /* Keeps images behind the text */
+    transition: transform 1s ease-in-out;
+}
+.product-image {
+    text-align: center; /* Centers the description below the image */
+    max-width: 250px; /* Restricts width */
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s;
+}
+
+.product-description {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.6); /* Adds a slight dark background */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+
+
+.product-image:hover img {
+    transform: scale(1.1);
+}
+
+
+
+
+footer {
+    background-color: #0c0c0c;
+    color: white;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+}
+
+.footer-container {
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.signup-section {
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.signup-section p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.signup-section input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px 0;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.radio-group label {
+    font-size: 14px;
+}
+
+.privacy-policy {
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.footer-column {
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 25px;
+}
+
+.social-icons a:hover {
+    width: 30px;
+    height: 30px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        text-align: center;
+    }
+}
