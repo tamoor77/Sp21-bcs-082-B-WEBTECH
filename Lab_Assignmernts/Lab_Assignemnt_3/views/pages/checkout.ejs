@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= title || 'Checkout' %></title>
+  <link rel="stylesheet" href="/css/checkout.css"/>
+</head>
+<body>
+  <div class="checkout-container">
+    <div class="checkout-left">
+      <img src="/assets/images/logo-dark.svg" alt="Belstaff Logo" class="logo" />
+
+      <h1>Checkout</h1>
+      <form class="checkout-form" action="/place-order" method="POST">
+        <!-- Contact Info -->
+        <div class="contact">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Email" required />
+        </div>
+
+        <!-- Delivery Info -->
+        <div class="delivery">
+          <label>Full Name</label>
+          <input type="text" name="name" placeholder="Full Name" required />
+
+          <label>Phone</label>
+          <input type="text" name="phone" placeholder="Phone" required />
+
+          <label>Address</label>
+          <input type="text" name="address" placeholder="Shipping Address" required />
+        </div>
+
+        <!-- Payment (visual only) -->
+        <div class="payment">
+          <h3>Payment </h3>
+          
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Place Order</button>
+      </form>
+
+      <a href="/cart" class="cancel-btn">Back to Cart</a>
+    </div>
+
+    <div class="checkout-right">
+      <h3>Your Cart Summary</h3>
+
+      <% let total = 0; %>
+      <% cart.forEach(item => {
+           const itemTotal = item.price * item.quantity;
+           total += itemTotal;
+      %>
+        <div class="item-summary">
+          <img src="<%= item.image %>" alt="<%= item.name %>" width="60" />
+          <div class="details">
+            <p><strong><%= item.name %></strong></p>
+            <p>Qty: <%= item.quantity %></p>
+          </div>
+          <span>$<%= itemTotal.toFixed(2) %></span>
+        </div>
+      <% }) %>
+
+      <hr />
+      <div class="summary">
+        <p><strong>Total: $<%= total.toFixed(2) %></strong></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

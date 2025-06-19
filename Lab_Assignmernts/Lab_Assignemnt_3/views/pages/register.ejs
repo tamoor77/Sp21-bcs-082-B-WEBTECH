@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belstaff - Register</title>
+  <link rel="stylesheet" href="/css/register.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="top-bar">
+    <div class="top-message">
+      SUBSCRIBE TO OUR EMAILS FOR EXCLUSIVE UPDATES <a href="#">LEARN MORE</a>
+    </div>
+  </header>
+
+  <!-- Navigation bar -->
+  <nav class="nav-bar">
+    <div class="nav-left">
+      <img src="/assets/images/logo-dark.svg" alt="Belstaff Logo" class="logo" />
+    </div>
+    <div class="nav-links">
+      <a href="#">NEW ARRIVALS</a>
+      <a href="#">MEN</a>
+      <a href="#">WOMEN</a>
+      <a href="#">MOTORCYCLE</a>
+    </div>
+    <div class="nav-icons">
+      <span>EN</span>
+      <span>🔍</span>
+      <% if (typeof session !== 'undefined' && session.user) { %>
+        <a href="/logout" style="text-decoration: none; color: black;">Logout</a>
+      <% } else { %>
+        <a href="/login" style="text-decoration: none; color: black;">👤</a>
+      <% } %>
+      <a href="/cart">🛒</a>
+    </div>
+  </nav>
+
+  <!-- Registration Form -->
+  <main class="register-container">
+    <h1>REGISTER</h1>
+
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="error-message" style="color: red; margin-bottom: 1em;"><%= error %></div>
+    <% } %>
+
+    <form class="register-form" action="/register" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+
+      <div class="password-wrapper">
+        <input type="password" name="password" placeholder="Password" required id="password"/>
+        <span class="eye-icon" onclick="togglePassword('password')">👁️</span>
+      </div>
+
+      <label class="checkbox-container">
+        <input type="checkbox" required />
+        <span>I agree to the terms and conditions</span>
+      </label>
+
+      <button type="submit" class="signup-btn">Sign Up</button>
+
+      <p class="login-redirect">
+        Already have an account? <a href="/login" class="login-link">Login</a>
+      </p>
+    </form>
+  </main>
+
+  <script>
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>
