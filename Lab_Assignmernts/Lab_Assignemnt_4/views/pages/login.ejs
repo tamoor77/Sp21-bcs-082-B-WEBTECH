@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belstaff - Login</title>
+  <link rel="stylesheet" href="/css/login.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-message">
+      SUBSCRIBE TO OUR EMAILS FOR EXCLUSIVE UPDATES <a href="#">LEARN MORE</a>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <div class="nav-left">
+      <a href='/home'>
+      <img src="/assets/images/logo-dark.svg" alt="Belstaff Logo" class="logo" /></a>
+    </div>
+    <div class="nav-links">
+      <a href="#">NEW ARRIVALS</a>
+      <a href="#">MEN</a>
+      <a href="#">WOMEN</a>
+      <a href="#">MOTORCYCLE</a>
+    </div>
+    <div class="nav-icons">
+      <span>EN</span>
+      <span>🔍</span>
+      
+      <% if (typeof session !== 'undefined' && session.user) { %>
+        <a href="/logout" style="text-decoration: none; color: black;">Logout</a>
+      <% } else { %>
+        <a href="/login" style="text-decoration: none; color: black;">👤</a>
+      <% } %>
+
+      <a href="/cart">🛒</a>
+    </div>
+  </nav>
+
+  <main class="login-container">
+    <h1>LOG-IN</h1>
+
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="error-message" style="color: red; margin-bottom: 1em;"><%= error %></div>
+    <% } %>
+
+    <form class="login-form" method="POST" action="/login">
+      <input type="email" name="email" placeholder="Email" required />
+
+      <div class="password-wrapper">
+        <input type="password" name="password" placeholder="Password" required id="passwordInput" />
+        <span class="eye-icon" id="togglePassword" style="cursor: pointer;">👁️</span>
+      </div>
+
+  <a href="/forgot-password" class="forgot-password">Forgot your password?</a>
+
+
+      <button type="submit">LOGIN</button>
+
+      <a href="/register" class="create-account">Create Account</a>
+    </form>
+  </main>
+
+  <script>
+    // Password visibility toggle
+    document.getElementById('togglePassword')?.addEventListener('click', () => {
+      const input = document.getElementById('passwordInput');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    });
+  </script>
+</body>
+</html>
